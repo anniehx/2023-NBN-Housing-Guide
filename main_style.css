@@ -109,6 +109,10 @@
   .filter-layout {
     width: 90%;
     grid-area: d;
+    display: flex;	
+    flex-direction: row;	
+    justify-content: space-evenly; 
+    margin: 15px;
   } 
 
 
