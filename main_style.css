@@ -1,0 +1,316 @@
+/* nav bar */
+  .navbar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 7vh;
+    padding: 1vh 0;
+    z-index: 3;
+  }
+
+  .top-logo {
+    display: flex;
+  }
+
+  .nbn-logo-nav {
+    margin-left: 1vw;
+    height: 100%;
+  }
+
+  .nbn-path {
+    fill: #4E2A84;
+    transition: fill 1s ease;
+  }
+
+  .homepage-link:hover .nbn-path {
+    fill: #b6acd1;
+  }
+
+  /* hyperlinks */
+
+  a {
+    color: rgb(66, 67, 69);
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: rgb(155, 157, 170);
+  }
+
+  a:hover {
+    color: rgb(0, 0, 0);
+  }
+
+  /* intro */
+
+  body {
+    font-family: quasimoda, sans-serif;
+    margin: 0;
+  }
+
+  .dropcap {
+    color: rgb(10, 19, 46);
+    float: left;
+    font-size: 90px;
+    line-height: 60px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+  }
+
+  .heading {
+    margin-top: 60px;
+    padding-left: 25vw;
+    width: 50%;
+  }
+
+  .heading h1 {
+    font-size: 3em;
+    margin: 0;
+    text-align: center;
+    color:rgb(10, 19, 46);
+  }
+
+  .heading p {
+    line-height: 1.8em;
+    font-size: 19px;
+  }
+
+  hr {
+    margin: 0vh 15%;
+  }
+
+
+  /* grid */
+
+  .wrapper{
+    display: grid;
+    grid-template-columns: 30vw 18vw 18vw 20vw;
+    grid-template-rows: 95vh;
+    grid-template-areas: 
+      "a b c d";
+    margin-left: 8vw;
+  }
+
+  .map {
+    grid-area: a;
+  }
+
+  .table-north {
+    grid-area: b;
+    margin-left: 2vw;
+  }
+
+  .table-south {
+    grid-area: c;
+  }
+
+  .filter-layout {
+    width: 90%;
+    grid-area: d;
+  } 
+
+
+  /* map */
+
+  #mapid {
+    height: 80vh;
+    width: 30vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    z-index: 1;
+  }
+
+  .my-label {
+    position: absolute;
+    width:100px;
+    font-size:40px;
+}
+
+  /* table */
+
+  table {
+    margin-left: 2vw;
+    border-collapse: collapse;
+    width: 80%;
+    margin-top: 1vw;
+  }
+
+  .table-headings {
+    border-bottom: 3px solid #4E2A84;
+    text-align: left;
+  }
+
+  .table-headings:hover {
+    background-color: transparent;
+  }
+
+  td {
+    padding: 12px;
+    border: none;
+  }
+
+  tr {
+    border-bottom: 1px solid #b6acd1;
+  }
+
+  tr:hover {
+    background-color: #e0daef;
+  }
+
+  /* filters */
+
+  .filter-layout li {
+    list-style: none;
+    padding: 3px;
+  }
+
+  .filter {
+    padding-left: 2vw;
+  }
+
+  .filter p {
+    font-weight: bold;
+    text-align: left;
+    padding-left: 15px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+  }
+
+  ul {
+    padding-left: 15px;
+  }
+
+  input.filter {
+    width: 18px;
+    height: 18px;
+    margin-right: 3px;
+    vertical-align: center;
+    position: relative;
+  }
+
+  /* footer */
+
+  .credits {
+    text-align: center;
+    height: 15vh;
+    padding-top: 4px;
+    width: 100%;
+    margin-bottom: 0px;
+  }
+
+  /* mobile styling */
+  @media (max-width: 1000px) {
+
+    .wrapper{
+      display: grid;
+      grid-template-columns: 30vw 22vw 22vw 22vw;
+      grid-template-rows: 95vh;
+      grid-template-areas: 
+        "a b c d";
+      margin-left: 5vw;
+    }
+
+    .filter{
+      padding-left: 1vw;
+    }
+
+    .filter p{
+      padding-left: 0vw;
+    }
+
+    .filter ul{
+      padding-left: 0vw;
+    }
+  }
+
+  @media (max-width: 850px) {
+
+    .body {
+      padding-left: 5vw;
+    }
+
+    .heading {
+      margin-top: 100px;
+      padding-left: 12vw;
+      width: 85%;
+    }
+
+    .heading p {
+      width: 100%;
+    }
+
+    .wrapper{
+      display: grid;
+      grid-template-columns: 50vw 50vw;
+      grid-template-rows: 60vh 50vh 100vh;
+      grid-template-areas: 
+        "a a"
+        "b b"
+        "c d";
+      margin-left: 3vw;
+      text-align: center;
+    }
+
+    #mapid {
+      height: 55vh;
+      width: 90%;
+      margin-left: 5vw;
+      grid-area: a;
+    }
+    
+    .filter-layout {
+      grid-area: b;
+    }
+
+    .table-north {
+      grid-area: c;
+      width: 100%;
+    }
+
+    .table-south {
+      grid-area: d;
+      width: 100%;
+    }
+
+    .filter-layout hr{
+      display: none;
+    }
+
+    /* .filter-layout{
+      display: grid;
+      grid-template-columns: 40vw 40vw;
+      grid-template-rows: 40vh 40vh;
+      grid-template-areas: 
+        "a b"
+        "c d";
+      margin-left: 10vw;
+      text-align: center;
+    } */
+
+    .filter {
+      height: 5vh;
+    }
+
+    .filter {
+      /* padding-left: 2vw; */
+      display: inline-block;
+      vertical-align: top;
+    } 
+
+    .filter li {
+      text-align: left;
+      /* padding-left: 0px; */
+    }
+  
+    .filter ul {
+      /* padding-left: 10px; */
+    }
+
+    .credits {
+      height: 15vh;
+      padding: 10px;
+    }
+
+  }
