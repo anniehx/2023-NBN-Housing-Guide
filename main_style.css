@@ -109,10 +109,6 @@
   .filter-layout {
     width: 90%;
     grid-area: d;
-    display: flex;	
-    flex-direction: row;	
-    justify-content: space-evenly; 
-    margin: 15px;
   } 
 
 
@@ -206,7 +202,6 @@
 
   /* mobile styling */
   @media (max-width: 1000px) {
-
     .wrapper{
       display: grid;
       grid-template-columns: 30vw 22vw 22vw 22vw;
@@ -266,14 +261,23 @@
     
     .filter-layout {
       grid-area: b;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-top: 1em;
     }
 
     .table-north {
+      padding-top: 130px;
       grid-area: c;
       width: 100%;
     }
 
     .table-south {
+      padding-top: 130px;
       grid-area: d;
       width: 100%;
     }
@@ -301,6 +305,8 @@
       /* padding-left: 2vw; */
       display: inline-block;
       vertical-align: top;
+      width: 48%;
+      margin-bottom: 1em;
     } 
 
     .filter li {
