@@ -361,7 +361,7 @@
       <div class="filter-layout">
 
         <div class="filter" id="dorm-type">
-          <p>Type of dorm 🏡</p>
+          <p>type of dorm 🏡</p>
           <ul class="type">
             <li>
               <input class="filter" id="hall" type="checkbox" />&nbsp;&nbsp;Residential Hall
@@ -384,7 +384,7 @@
                 <input class="filter" id="double" type="checkbox" />&nbsp;&nbsp;Doubles
               </li>
               <li>
-                <input class="filter" id="double" type="checkbox" />&nbsp;&nbsp;Tripes
+                <input class="filter" id="triple" type="checkbox" />&nbsp;&nbsp;Triples
               </li>
             </ul>
           </div>
@@ -416,17 +416,17 @@
                 <input class="filter" id="gender" type="checkbox" />&nbsp;&nbsp;All-gender
                 housing
               </li>
-              <li>
+              <!-- <li>
                 <input class="filter" id="elevator" type="checkbox" />&nbsp;&nbsp;Elevator access
-              </li>
+              </li> -->
               <li>
                 <input class="filter" id="AC" type="checkbox" />&nbsp;&nbsp;A.C.</li>
               <li>
-                <input class="filter" id="dining" type="checkbox" />&nbsp;&nbsp;Dining
+                <input class="filter" id="dining" type="checkbox" />&nbsp;&nbsp;dining
                 hall
               </li>
               <li>
-                <input class="filter" id="bathroom" type="checkbox"/>&nbsp;&nbsp;Suite-style bathroom
+                <input class="filter" id="bathroom" type="checkbox"/>&nbsp;&nbsp;suite-style bathroom
               </li>
             </ul>
           </div>
@@ -481,327 +481,394 @@
 
       // dorms
       const dormList = [
-    // {
-    //     name: "560 Lincoln St.",
-    //     address: "TK",
-    //     size: "422",
-    //     type: "Hall",
-    //     location: "North",
-    //     dining: "no",
-    //     firstyear: "yes",
-    //     ac: "No",
-    //     suite: "yes",
-    //     elevator: "no",
-    //     singles: "no",
-    //     doubles: "yes",
-    //     triples: "no",
-    //     prices: "Double: 10,581",
-    //     allgender: "no",
-    //     lat: 42.061053,
-    //     long: -87.676167},
     {
-      Name: "1838 Chicago Ave.",
-      Class: "1838",
+      name: "560 Lincoln St.",
+      class: "lincoln",
+      lat: 42.061053,
+      long: -87.676167,
+      size: 422,
+      type: "Residence Hall",
+      location: "North",
+      dining: false,
+      AC: false,
+      suite: true,
+      singles: false,
+      doubles: true,
+      triples: false,
+      allgender: false,
+    },
+    {
+      name: "1838 Chicago Ave.",
+      class: "1838",
       lat: 42.05110501,
       long: -87.67816606,
-      Size: 120,
-      Type: "Residence Hall",
-      Area: "South",
+      size: 120,
+      type: "Residence Hall",
+      area: "South",
       AC: true,
-      Dining: false,
-      Suite: false,
-      "All-gender": false,
+      dining: false,
+      suite: false,
+      allgender: false,
+      singles: true,
+      doubles: true,
+      triples: false,
     },
     {
-      Name: "2303 Sheridan Rd. (GREEN House)",
-      Class: "greenhouse",
+      name: "2303 Sheridan Rd. (GREEN House)",
+      class: "greenhouse",
       lat: 42.05949702,
       long: -87.6765947,
-      Size: 40,
-      Type: "Residence Hall",
-      Area: "Northeast",
+      size: 40,
+      type: "Residence Hall",
+      area: "Northeast",
       AC: true,
-      Dining: false,
-      Suite: false,
-      "All-gender": false,
+      dining: false,
+      suite: false,
+      allgender: false,
+      singles: true,
+      doubles: true,
+      triples: true,
+
     },
     {
-      Name: "2349 Sheridan Rd.",
-      Class: "2349",
+      name: "2349 Sheridan Rd.",
+      class: "2349",
       lat: 42.06130671,
       long: -87.6761558,
-      Size: 90,
-      Type: "Residence Hall",
-      Area: "North",
+      size: 90,
+      type: "Residence Hall",
+      area: "North",
       AC: false,
-      Dining: false,
-      Suite: false,
-      "All-gender": false,
+      dining: false,
+      suite: false,
+      allgender: false,
+      singles: false,
+      doubles: true,
+      triples: false,
     },
     {
-      Name: "Allison Hall",
-      Class: "allison",
+      name: "Allison Hall",
+      class: "allison",
       lat: 42.05060418,
       long: -87.6782444,
-      Size: 363,
-      Type: "Residence Hall",
-      Area: "South",
+      size: 363,
+      type: "Residence Hall",
+      area: "South",
       AC: true,
-      Dining: true,
-      Suite: false,
-      "All-gender": true,
+      dining: true,
+      suite: false,
+      allgender: true,
+      singles: true,
+      doubles: true,
+      triples: true,
     },
     {
-      Name: "Elder Hall",
-      Class: "elder",
+      name: "Elder Hall",
+      class: "elder",
       lat: 42.06103289,
       long: -87.67728019,
-      Size: 345,
-      Type: "Residence Hall",
-      Area: "North",
+      size: 345,
+      type: "Residence Hall",
+      area: "North",
       AC: true,
-      Dining: true,
-      Suite: false,
-      "All-gender": true,
+      dining: true,
+      suite: false,
+      allgender: true,
+      singles: true,
+      doubles: true,
+      triples: false,
     },
     {
-      Name: "Bobb-McCulloch Hall",
-      Class: "bobb",
+      name: "Bobb-McCulloch Hall",
+      class: "bobb",
       lat: 42.05996322,
       long: -87.67542938,
-      Size: 496,
-      Type: "Residence Hall",
-      Area: "Northeast",
+      size: 496,
+      type: "Residence Hall",
+      area: "Northeast",
       AC: true,
-      Dining: false,
-      Suite: false,
-      "All-gender": false,
+      dining: false,
+      suite: false,
+      allgender: false,
+      singles: false,
+      doubles: true,
+      triples: true,
     },
     {
-      Name: "Foster-Walker Complex",
-      Class: "plex",
+      name: "Foster-Walker Complex",
+      class: "plex",
       lat: 42.05298388,
       long: -87.67817516,
-      Size: 582,
-      Type: "Residence Hall",
-      Area: "Southwest",
+      size: 582,
+      type: "Residence Hall",
+      area: "Southwest",
       AC: true,
-      Dining: true,
-      Suite: false,
-      "All-gender": true,
+      dining: true,
+      suite: false,
+      allgender: true,
+      singles: true,
+      doubles: false,
+      triples: false,
     },
     {
-      Name: "Jones Hall",
-      Class: "jones",
+      name: "Jones Hall",
+      class: "jones",
       lat: 42.04951668,
       long: -87.67431117,
-      Size: 121,
-      Type: "Residence Hall",
-      Area: "South",
+      size: 121,
+      type: "Residence Hall",
+      area: "South",
       AC: true,
-      Dining: false,
-      Suite: false,
-      "All-gender": false,
+      dining: false,
+      suite: false,
+      allgender: false,
+      singles: true,
+      doubles: true,
+      triples: false,
+      singles: true,
+      doubles: true,
+      triples: false,
     },
     {
-      Name: "Kemper Hall",
-      Class: "kemper",
+      name: "Kemper Hall",
+      class: "kemper",
       lat: 42.06117345,
       long: -87.67423103,
-      Size: 165,
-      Type: "Residence Hall",
-      Area: "North",
+      size: 165,
+      type: "Residence Hall",
+      area: "North",
       AC: true,
-      Dining: false,
-      Suite: true,
-      "All-gender": true,
+      dining: false,
+      suite: true,
+      allgender: true,
+      singles: true,
+      doubles: true,
+      triples: false,
     },
     {
-      Name: "Lindgren House",
-      Class: "lindgren",
+      name: "Lindgren House",
+      class: "lindgren",
       lat: 42.05968626,
       long: -87.67619105,
-      Size: 37,
-      Type: "Residence Hall",
-      Area: "Northeast",
+      size: 37,
+      type: "Residence Hall",
+      area: "Northeast",
       AC: false,
-      Dining: false,
-      Suite: false,
-      "All-gender": false,
+      dining: false,
+      suite: false,
+      allgender: false,
+      singles: true,
+      doubles: false,
+      triples: false,
     },
     {
-      Name: "Rogers House",
-      Class: "rogers",
+      name: "Rogers House",
+      class: "rogers",
       lat: 42.05154068,
       long: -87.67853493,
-      Size: 49,
-      Type: "Residence Hall",
-      Area: "South",
+      size: 49,
+      type: "Residence Hall",
+      area: "South",
       AC: false,
-      Dining: false,
-      Suite: false,
-      "All-gender": false,
+      dining: false,
+      suite: false,
+      allgender: false,
+      singles: true,
+      doubles: true,
+      triples: false,
     },
     {
-      Name: "Sargent Hall",
-      Class: "sargent",
+      name: "Sargent Hall",
+      class: "sargent",
       lat: 42.0588595,
       long: -87.67524432,
-      Size: 157,
-      Type: "Residence Hall",
-      Area: "Northeast",
+      size: 157,
+      type: "Residence Hall",
+      area: "Northeast",
       AC: false,
-      Dining: true,
-      Suite: false,
-      "All-gender": false,
+      dining: true,
+      suite: false,
+      allgender: false,
+      singles: true,
+      doubles: true,
+      triples: false,
     },
     {
-      Name: "Shepard Hall",
-      Class: "shepard",
+      name: "Shepard Hall",
+      class: "shepard",
       lat: 42.05108938,
       long: -87.67829267,
-      Size: 153,
-      Type: "Residence Hall",
-      Area: "South",
+      size: 153,
+      type: "Residence Hall",
+      area: "South",
       AC: true,
-      Dining: false,
-      Suite: false,
-      "All-gender": false,
+      dining: false,
+      suite: false,
+      allgender: false,
+      singles: true,
+      doubles: true,
+      triples: false,
     },
     {
-      Name: "Ayers Hall",
-      Class: "ayers",
+      name: "Ayers Hall",
+      class: "ayers",
       lat: 42.06055079,
       long: -87.67463706,
-      Size: 170,
-      Type: "Residential College",
-      Area: "Northeast",
+      size: 170,
+      type: "Residential College",
+      area: "Northeast",
       AC: true,
-      Dining: false,
-      Suite: false,
-      "All-gender": false,
+      dining: false,
+      suite: false,
+      allgender: false,
+      singles: true,
+      doubles: true,
+      triples: false,
     },
     {
-      Name: "Chapin Hall ",
-      Class: "chapin",
+      name: "Chapin Hall ",
+      class: "chapin",
       lat: 42.05126465,
       long: -87.68045051,
-      Size: 72,
-      Type: "Residential College",
-      Area: "Southwest",
+      size: 72,
+      type: "Residential College",
+      area: "Southwest",
       AC: false,
-      Dining: false,
-      Suite: false,
-      "All-gender": false,
+      dining: false,
+      suite: false,
+      allgender: false,
+      singles: true,
+      doubles: true,
+      triples: true,
     },
     {
-      Name: "2303 Sheridan Rd. ",
-      Class: "2303",
+      name: "2303 Sheridan Rd. ",
+      class: "2303",
       lat: 42.05949702,
       long: -87.6765947,
-      Size: 40,
-      Type: "Residential College",
-      Area: "Northeast",
+      size: 40,
+      type: "Residential College",
+      area: "Northeast",
       AC: true,
-      Dining: false,
-      Suite: false,
-      "All-gender": false,
+      dining: false,
+      suite: false,
+      allgender: false,
+      singles: true,
+      doubles: true,
+      triples: true,
     },
     {
-      Name: "East Fairchild",
-      Class: "efc",
+      name: "East Fairchild",
+      class: "efc",
       lat: 42.05078145,
       long: -87.67427763,
-      Size: 109,
-      Type: "Residential College",
-      Area: "South",
+      size: 109,
+      type: "Residential College",
+      area: "South",
       AC: true,
-      Dining: false,
-      Suite: false,
-      "All-gender": false,
+      dining: false,
+      suite: false,
+      allgender: false,
     },
     {
-      Name: "Hobart House ",
-      Class: "hobart",
+      name: "Hobart House ",
+      class: "hobart",
       lat: 42.05190354,
       long: -87.67850153,
-      Size: 50,
-      Type: "Residential College",
-      Area: "South",
+      size: 50,
+      type: "Residential College",
+      area: "South",
       AC: true,
-      Dining: false,
-      Suite: false,
-      "All-gender": false,
+      dining: false,
+      suite: false,
+      allgender: false,
+      singles: true,
+      doubles: true,
+      triples: true,
     },
     {
-      Name: "North Mid-Quads",
-      Class: "nmq",
+      name: "North Mid-Quads",
+      class: "nmq",
       lat: 42.05192888,
       long: -87.67953558,
-      Size: 88,
-      Type: "Residential College",
-      Area: "Southwest",
+      size: 88,
+      type: "Residential College",
+      area: "Southwest",
       AC: true,
-      Dining: false,
-      Suite: false,
-      "All-gender": false,
+      dining: false,
+      suite: false,
+      allgender: false,
+      singles: true,
+      doubles: true,
+      triples: false,
     },
     {
-      Name: "South Mid-Quads ",
-      Class: "smq",
+      name: "South Mid-Quads ",
+      class: "smq",
       lat: 42.05150168,
       long: -87.67895784,
-      Size: 88,
-      Type: "Residential College",
-      Area: "Southwest",
+      size: 88,
+      type: "Residential College",
+      area: "Southwest",
       AC: true,
-      Dining: false,
-      Suite: false,
-      "All-gender": false,
+      dining: false,
+      suite: false,
+      allgender: false,
+      singles: true,
+      doubles: true,
+      triples: false,
     },
     {
-      Name: "Slivka Hall",
-      Class: "slivka",
+      name: "Slivka Hall",
+      class: "slivka",
       lat: 42.06062123,
       long: -87.67531556,
-      Size: 140,
-      Type: "Residential College",
-      Area: "Northeast",
+      size: 140,
+      type: "Residential College",
+      area: "Northeast",
       AC: true,
-      Dining: false,
-      Suite: true,
-      "All-gender": false,
+      dining: false,
+      suite: true,
+      allgender: false,
+      singles: true,
+      doubles: true,
+      triples: false,
     },
     {
-      Name: "West Fairchild",
-      Class: "wfc",
+      name: "West Fairchild",
+      class: "wfc",
       lat: 42.05116568,
       long: -87.67539924,
-      Size: 106,
-      Type: "Residential College",
-      Area: "South",
+      size: 106,
+      type: "Residential College",
+      area: "South",
       AC: true,
-      Dining: false,
-      Suite: false,
-      "All-gender": false,
+      dining: false,
+      suite: false,
+      allgender: false,
+      singles: true,
+      doubles: true,
+      triples: false,
     },
     {
-      Name: "Willard Hall ",
-      Class: "willard",
+      name: "Willard Hall ",
+      class: "willard",
       lat: 42.05183478,
       long: -87.68119685,
-      Size: 261,
-      Type: "Residential College",
-      Area: "Southwest",
+      size: 261,
+      type: "Residential College",
+      area: "Southwest",
       AC: true,
-      Dining: false,
-      Suite: false,
-      "All-gender": false,
+      dining: false,
+      suite: false,
+      allgender: false,
+      singles: true,
+      doubles: true,
+      triples: true,
     },
   ];
 
   // map
-
   var blueIcon = new L.Icon({
     iconUrl:
       "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png",
@@ -856,7 +923,7 @@
         grayIcon
       );
       marker.addTo(mymap);
-      marker.bindPopup(dormList[i].short_name);
+      marker.bindPopup(dormList[i].short_Name);
       marker.on("mouseover", function (e) {
         this.openPopup();
         this.setIcon(blueIcon);
@@ -867,15 +934,13 @@
       });
 
       markers[i] = marker;
-      marker.bindPopup(`<p>${dormList[i].Name} </p>`);
+      marker.bindPopup(`<p>${dormList[i].name} </p>`);
     }
   })();
 
   // functions
 
-  const checkboxes = Object.values(
-      document.querySelectorAll("input[type=checkbox]")
-    );
+  const checkboxes = Object.values(document.querySelectorAll("input[type=checkbox]"));
 
     checkboxes.forEach((checkbox) => {
       checkbox.addEventListener("change", () =>
@@ -886,9 +951,9 @@
         )
       );
     });
-    
+
     function getCurrDormsByFilter(filterArr) {
-      // console.log(filterArr);
+      console.log(filterArr);
       //clear classlist
       Object.values(document.querySelectorAll("tr")).map((d, i) => {
         if (i % 2 === 1) {
@@ -896,91 +961,77 @@
         } else d.style.backgroundColor = "white";
       });
     
-      // const locationsCheck = filterArr.filter(
-      //   (i) => i === "South" || i === "North"
-      // );
+      const collegeCheck = filterArr.filter((i) => i === "hall" || i === "college");
     
-      // const collegeCheck = filterArr.filter((i) => i === "Hall" || i === "College");
+      const sizeCheck = filterArr.filter(
+        (i) => i === "small" || i === "medium" || i === "large"
+      );
+      //console.log(sizeCheck);
     
-      // const sizeCheck = filterArr.filter(
-      //   (i) => i === "verysmall" || i === "small" || i === "medium" || i === "large"
-      // );
+      const roomCheck = filterArr.filter(
+        (i) => i === "single" || i === "double" || i === "triple"
+      );
+      console.log(roomCheck);
     
-      // const roomCheck = filterArr.filter(
-      //   (i) => i === "singles" || i === "doubles" || i === "triples"
-      // );
-    
-      // const filterDormsByLocation = (filterArr, dorm) => {
-      //   return locationsCheck.length === 0
-      //     ? true
-      //     : (filterArr.includes("North") && dorm.location === "North") ||
-      //         (filterArr.includes("South") && dorm.location === "South");
-      // };
-
       const filterDormsByType = (filterArr, dorm) => {
         return collegeCheck.length === 0
           ? true
-          : (filterArr.includes("Hall") && dorm.type === "Residential Hall") ||
-              (filterArr.includes("College") && dorm.type === "Residential College");
+          : (filterArr.includes("hall") && dorm.type === "Residence Hall") ||
+              (filterArr.includes("college") && dorm.type === "Residential College");
       };
 
-      // const filterDormsBySize = (filterArr, dorm) => {
-      //   return sizeCheck.length === 0
-      //     ? true
-      //     : (filterArr.includes("verysmall") && dorm.size < 50) ||
-      //         (filterArr.includes("small") && dorm.size === "<100") ||
-      //         (filterArr.includes("small") &&
-      //           dorm.size >= 50 &&
-      //           dorm.size <= 100) ||
-      //         (filterArr.includes("medium") &&
-      //           dorm.size >= 101 &&
-      //           dorm.size <= 200) ||
-      //         (filterArr.includes("large") && dorm.size > 200);
-      // };
+      const filterDormsBySize = (filterArr, dorm) => {
+        return sizeCheck.length === 0
+          ? true
+          :   (filterArr.includes("small") && dorm.size <= 100) || 
+              (filterArr.includes("medium") && dorm.size >= 101 && dorm.size <= 200) ||
+              (filterArr.includes("large") && dorm.size > 200);
+      };
     
-      // const filterDormsByRoom = (filterArr, dorm) => {
-      //   return roomCheck.length === 0
-      //     ? true
-      //     : (filterArr.includes("singles") && dorm.singles === "yes") ||
-      //         (filterArr.includes("doubles") && dorm.doubles === "yes") ||
-      //         (filterArr.includes("triples") && dorm.triples === "yes");
-      // };
-    
+      const filterDormsByRoom = (filterArr, dorm) => {
+        return roomCheck.length === 0
+          ? true
+          : (filterArr.includes("single") && dorm.singles == true) ||
+              (filterArr.includes("double") && dorm.doubles == true) ||
+              (filterArr.includes("triple") && dorm.triples == true);
+      };
+      
       const filterDormsByGender = (filterArr, dorm) => {
-        return filterArr.includes("all_gender") ? dorm.allgender == "true" : true;
+        return filterArr.includes("gender") ? dorm.allgender == true : true;
       };
 
       const filterDormsByDining = (filterArr, dorm) => {
-        return filterArr.includes("dining_hall") ? dorm.dining === "true" : true;
+        return filterArr.includes("dining") ? dorm.dining == true : true;
       };
 
-      const filterDormsByFreshmen = (filterArr, dorm) => {
-        return filterArr.includes("freshman") ? dorm.firstyear === "true" : true;
+      const filterDormsByBathroom = (filterArr, dorm) => {
+        return filterArr.includes("bathroom") ? dorm.suite == true: true;
       };
 
-      // const filterDormsByElevator = (filterArr, dorm) => {
-      //   return filterArr.includes("elevator") ? dorm.elevator === "yes" : true;
-      // };
-
-      const dormsFiltered = dorms
-        // .filter((dorm) => filterDormsByLocation(filterArr, dorm))
+      const filterDormsByAC = (filterArr, dorm) => {
+        return filterArr.includes("AC") ? dorm.AC == true: true;
+      };
+      
+      const dormsFiltered = dormList
         .filter((dorm) => filterDormsByType(filterArr, dorm))
-        // .filter((dorm) => filterDormsBySize(filterArr, dorm))
+        .filter((dorm) => filterDormsBySize(filterArr, dorm))
         .filter((dorm) => filterDormsByGender(filterArr, dorm))
         .filter((dorm) => filterDormsByDining(filterArr, dorm))
-        // .filter((dorm) => filterDormsByFreshmen(filterArr, dorm))
-        // .filter((dorm) => filterDormsByElevator(filterArr, dorm))
-        // .filter((dorm) => filterDormsByRoom(filterArr, dorm))
-        .map((d) => d.name);
+        .filter((dorm) => filterDormsByRoom(filterArr, dorm))
+        .filter((dorm) => filterDormsByBathroom(filterArr, dorm))
+        .filter((dorm) => filterDormsByAC(filterArr, dorm))
+        .map((d) => d.class);
     
       const dormSelection = Object.values(document.querySelectorAll("tr")).filter(
-        (d) => dormsFiltered.includes(d.className)
+        (d) => dormsFiltered.includes(d.id)
       );
-    
+      
+      console.log(`dormSelection:${dormSelection}`)
       for (let i = 0; i < dormSelection.length; i++) {
         dormSelection[i].style.backgroundColor = "#43e674";
       }
     }
+    
     </script>
   </body>
 </html>
