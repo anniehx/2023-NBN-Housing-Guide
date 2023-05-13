@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+    <!--imports stylesheet -->
+    <link rel="stylesheet" href="individual_style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+
+    <!--imports google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Roboto:ital,wght@0,400;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/eip4pld.css">
+
+    <!--imports leaflet-->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+
+    <title>Allison Hall</title>
+  </head>
+  
+  <body>
+    <nav class="navbar">
+      <a
+        class="homepage-link"
+        href="main_index.html"
+      >
+        <svg
+          version="1.0"
+          xmlns="http://www.w3.org/2000/svg"
+          class="nbn-logo-nav"
+          viewBox="0 0 1024.000000 1024.000000"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <g
+            class="svg-path nbn-path"
+            transform="translate(0.000000,1024.000000) scale(0.100000,-0.100000)"
+            fill="currentColor"
+            stroke="none"
+          >
+            <path
+              d="M4940 9953 c-891 -34 -1755 -309 -2480 -788 -714 -472 -1315 -1155        -1690 -1920 -256 -524 -403 -1040 -472 -1665 -20 -181 -17 -778 5 -965 138        -1165 628 -2168 1439 -2950 979 -943 2278 -1447 3551 -1377 361 20 653 64        1008 153 1403 350 2469 1207 3139 2524 267 524 425 1046 497 1635 25 207 25        772 0 985 -156 1312 -712 2376 -1662 3179 -147 125 -295 240 -300 234 -2 -2        155 -307 350 -678 195 -371 355 -678 355 -682 0 -5 -128 -8 -285 -8 l-285 0 0        -2690 0 -2690 -472 2 -471 3 -835 1877 c-459 1033 -838 1875 -843 1872 -5 -3        -9 -795 -9 -1885 l0 -1879 -490 0 -490 0 0 2695 0 2695 676 0 676 0 25 -27        c14 -16 49 -84 80 -153 296 -676 1177 -2651 1184 -2656 5 -3 9 582 9 1415 l0        1421 -255 0 c-140 0 -255 3 -255 6 0 3 194 374 431 825 237 451 433 828 436        838 4 15 -14 29 -84 69 -610 343 -1327 544 -2084 582 -186 9 -229 10 -399 3z"
+            ></path>
+          </g>
+        </svg>
+      </a>
+    </nav>
+
+    <!-- intro -->
+    <div class="heading">
+        <br>
+
+      <h1>Allison Hall</h1>
+        <br>
+        <hr>
+        <br>
+      <p>
+        <span class="dropcap">Allison</span>
+         is one of two South Campus dorms with a dining hall in it (Plex is the other). If you lose your keys, you won't have to go far because the South Area Desk is located in Allison. 
+        Rooms are known for being spacious and carpeted. It's in close proximity to the study spaces in Shepard, the 1838 gym and the sorority quad. No one actually calls it Hotel Allison, but some people say it's called that.
+        Allison offers all-gender housing on the first floor that students must opt into. Students can select either singles or doubles. The community bathrooms are labeled all-gender on that floor.
+      </p>
+      <br>
+    </div>
+
+      <br>
+
+    <!-- grid layout -->
+    <div class="wrapper">
+
+      <!--map image-->
+      <img class="map" src="allison_map.png" alt="Map image for Allison Hall">      
+      
+
+      <!-- Quick facts -->
+      <div class="quick-fact">
+        <h3>Quick Facts</h3>
+          <h4>🏠 General</h4>
+          <div class= "quick-fact-content">
+          <p>South Campus</p>
+          <p>Residential Hall</p>
+          <p>Size: Large (>200)</p>
+          <p>Room Types: Single, Double, Triples</p>
+          </div>
+          <hr>          
+          <h4>🛋️ Amenity</h4>
+          <div class="quick-fact-content">
+          <p>Air conditioning: Window AC Unit</p>
+          <p>Elevator: Yes</p>
+          <p>Bathroom: Community Style</p>
+          <p>ADA Accessibility: ???</p>
+          <P>Social Scene: ???</P>
+          </div>
+          <hr>          
+          <h4>🏷️ Room Price</h4>
+          <div class="quick-fact-content">
+          <p>11,000 single/year</p>
+          <p>9,600 double/year</p>
+          </div>
+          <a href="https://www.northwestern.edu/living/residential-experience/housing-options/res-halls/allison.html"> Official Allison Hall Page</a>   
+      </div>
+
+        <br>
+    </div>
+    
+    <!-- image slider -->
+    <!-- Slider main container -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    
+    <section class="splide" aria-label="Splide Basic HTML Example">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide"><img src="Allison_images/1.png"></li>
+          <li class="splide__slide"><img src="Allison_images/2.png"></li>
+          <li class="splide__slide"><img src="Allison_images/3.png"></li>
+          <li class="splide__slide"><img src="Allison_images/4.png"></li>
+          <li class="splide__slide"><img src="Allison_images/5.png"></li>
+        </ul>
+      </div>
+    </section>
+
+    
+    <!--WHAT RESIDENTS SAY-->
+    <div class="heading">
+      <h2>WHAT RESIDENTS SAY</h2>
+      <p>
+        "The room is big, it's a great location, and it's so convenient to live on top of a dining hall." - Class of 2025
+      </p>
+      <p>
+        "I have met most people at Allison outside of Allison. Lots of people come to hang out in the first floor lounge. Allison is definitely less social than other dorms. I would maybe prefer to live North Campus like in Elder just so I could get to classes at Tech faster." - Class of 2025"
+      </p>
+      <p>
+        The vibe in Allison is very chill. I like how it's clean and new. The dining hall is also very accessible. The only thing I dislike about Allison is that there's not enough lighting and ventilation." - Class of 2024
+      </p> 
+      <p>
+        "The dorm isn't too old, so it's still pretty clean. I didn't have a choice to live anywhere else. Allison is pretty good. I like how it's super close to the dining hall so you can always get food in your pajamas. However, I wish there could be better lighting." - Class of 2024
+      </p>
+      <p>
+        "It's super quiet. You don't really get to know the people in Allison. But the dorms are super nice, and the bathrooms are cool, and the dining hall is downstairs, so the amenities make up for the lack of social life. Also love having laundry on the same floor. But the dorm is quiet and probably isn't the place to make a lot of friends. I'm not sure if I would change because the dorm is really nice, but I would like to live somewhere more social." - Class of 2024
+      </p>
+      <p>
+        "I like how it's right on top of a dining hall and close to all my classes on South Campus. Even if my classes are at Bienen or Swift Hall, they are still very walkable from Allison. I wish my room could be bigger and closer to the laundry room and the elevator." - Class of 2024
+      </p>
+    </div>
+
+
+    <!--footer-->
+    <footer class="credits">
+      <p>
+        Adapted from past NBN Housing Guides. Information from
+        Northwestern Residential Services.
+      </p>
+      <p>Designed and developed by. Thumbail by.</p>
+    </footer>
+    
+
+  </body>
+</html>
