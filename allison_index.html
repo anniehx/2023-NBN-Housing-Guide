@@ -9,6 +9,7 @@
 
     <!--imports stylesheet -->
     <link rel="stylesheet" href="individual_style.css">
+    <!-- image slider css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 
     <!--imports google fonts -->
@@ -87,11 +88,10 @@
       <!--map image-->
       <img class="map" src="allison_map.png" alt="Map image for Allison Hall">      
       
-
       <!-- Quick facts -->
       <div class="quick-fact">
         <h3>Quick Facts</h3>
-          <h4>🏠 General</h4>
+          <h4>General 🏠</h4>
           <div class= "quick-fact-content">
           <p>South Campus</p>
           <p>Residential Hall</p>
@@ -99,7 +99,7 @@
           <p>Room Types: Single, Double, Triples</p>
           </div>
           <hr>          
-          <h4>🛋️ Amenity</h4>
+          <h4>Amenity 🛋️</h4>
           <div class="quick-fact-content">
           <p>Air conditioning: Window AC Unit</p>
           <p>Elevator: Yes</p>
@@ -108,7 +108,7 @@
           <P>Social Scene: ???</P>
           </div>
           <hr>          
-          <h4>🏷️ Room Price</h4>
+          <h4>Room Price 🏷️</h4>
           <div class="quick-fact-content">
           <p>11,000 single/year</p>
           <p>9,600 double/year</p>
@@ -120,21 +120,29 @@
     </div>
     
     <!-- image slider -->
-    <!-- Slider main container -->
-
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-    
-    <section class="splide" aria-label="Splide Basic HTML Example">
+    <section class="splide">
       <div class="splide__track">
-        <ul class="splide__list">
-          <li class="splide__slide"><img src="Allison_images/1.png"></li>
-          <li class="splide__slide"><img src="Allison_images/2.png"></li>
-          <li class="splide__slide"><img src="Allison_images/3.png"></li>
-          <li class="splide__slide"><img src="Allison_images/4.png"></li>
-          <li class="splide__slide"><img src="Allison_images/5.png"></li>
-        </ul>
+        <div class="splide__list">
+          <div class="splide__slide"><img src="Allison_images/1.png"></div>
+          <div class="splide__slide"><img src="Allison_images/2.png"></div>
+          <div class="splide__slide"><img src="Allison_images/3.png"></div>
+          <div class="splide__slide"><img src="Allison_images/4.png"></div>
+          <div class="splide__slide"><img src="Allison_images/5.png"></div>
+        </div>
       </div>
     </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>   
+    <script type="text/javascript">
+      var splide = new Splide( '.splide', {
+        type     : 'loop',
+        height   : '30rem',
+        focus    : 'center',
+        autoWidth: true,
+      } );
+
+      splide.mount();
+    </script>
 
     
     <!--WHAT RESIDENTS SAY-->

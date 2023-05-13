@@ -92,6 +92,7 @@
       "a b";
     /* margin-left: 8vw; */
     justify-content: center;
+    /* column-gap: 5vw; */
   }
 
   .map {
