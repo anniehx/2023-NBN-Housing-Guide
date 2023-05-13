@@ -30,13 +30,13 @@
 
   /* hyperlinks */
   a {
-    color: rgb(66, 67, 69);
+    color: rgb(130, 98, 178);
     text-decoration: none;
   }
 
-  a:visited {
+  /* a:visited {
     color: rgb(155, 157, 170);
-  }
+  } */
 
   a:hover {
     color: rgb(0, 0, 0);
@@ -106,7 +106,6 @@
     /* margin-left: 2vw; */
   }
 
-
   /* footer */
   .credits {
     text-align: center;
@@ -164,3 +163,4 @@
     }
 
   } */
+  
