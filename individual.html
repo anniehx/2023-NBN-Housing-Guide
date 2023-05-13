@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+    <!--imports stylesheet -->
+    <link rel="stylesheet" href="individual.css">
+    <!--imports google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Roboto:ital,wght@0,400;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/eip4pld.css">
+
+    <!--imports leaflet-->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+
+    <title>Allison Hall</title>
+  </head>
+  
+  <body>
+    <nav class="navbar">
+      <a
+        class="homepage-link"
+        href="https://northbynorthwestern.com/"
+      >
+        <svg
+          version="1.0"
+          xmlns="http://www.w3.org/2000/svg"
+          class="nbn-logo-nav"
+          viewBox="0 0 1024.000000 1024.000000"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <g
+            class="svg-path nbn-path"
+            transform="translate(0.000000,1024.000000) scale(0.100000,-0.100000)"
+            fill="currentColor"
+            stroke="none"
+          >
+            <path
+              d="M4940 9953 c-891 -34 -1755 -309 -2480 -788 -714 -472 -1315 -1155        -1690 -1920 -256 -524 -403 -1040 -472 -1665 -20 -181 -17 -778 5 -965 138        -1165 628 -2168 1439 -2950 979 -943 2278 -1447 3551 -1377 361 20 653 64        1008 153 1403 350 2469 1207 3139 2524 267 524 425 1046 497 1635 25 207 25        772 0 985 -156 1312 -712 2376 -1662 3179 -147 125 -295 240 -300 234 -2 -2        155 -307 350 -678 195 -371 355 -678 355 -682 0 -5 -128 -8 -285 -8 l-285 0 0        -2690 0 -2690 -472 2 -471 3 -835 1877 c-459 1033 -838 1875 -843 1872 -5 -3        -9 -795 -9 -1885 l0 -1879 -490 0 -490 0 0 2695 0 2695 676 0 676 0 25 -27        c14 -16 49 -84 80 -153 296 -676 1177 -2651 1184 -2656 5 -3 9 582 9 1415 l0        1421 -255 0 c-140 0 -255 3 -255 6 0 3 194 374 431 825 237 451 433 828 436        838 4 15 -14 29 -84 69 -610 343 -1327 544 -2084 582 -186 9 -229 10 -399 3z"
+            ></path>
+          </g>
+        </svg>
+      </a>
+    </nav>
+
+    <!-- intro -->
+    <div class="heading">
+        <br>
+
+      <h1>Allison Hall
+      </h1>
+
+        <br>
+        <hr>
+        <br>
+
+      <p>
+        <span class="dropcap">A</span>
+        llison is one of two South Campus dorms with a dining hall in it (Plex is the other). If you lose your keys, you won't have to go far because the South Area Desk is located in Allison. 
+        Rooms are known for being spacious and carpeted. It's in close proximity to the study spaces in Shepard, the 1838 gym and the sorority quad. No one actually calls it Hotel Allison, but some people say it's called that.
+        Allison offers all-gender housing on the first floor that students must opt into. Students can select either singles or doubles. The community bathrooms are labeled all-gender on that floor.
+      </p>
+      <br>
+    </div>
+
+      <br>
+
+    <!-- grid layout -->
+    <div class="wrapper">
+
+      <!--leaflet map-->
+      <div class="map">
+        <div id="mapid">
+        </div>
+      </div>
+
+      <!--dorms table-->
+    <!-- picture of map here -->
+      <div class="table-north">
+        <table>
+          <thead>
+            <tr class="table-headings">
+              <th>North & Northeast</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr id="1838">
+              <td>
+                <a
+                  href="https://northbynorthwestern.com/housing-2021-1838chicago/"
+                  target="_blank"
+                  >1838 Chicago Ave.</a
+                >
+              </td>
+            </tr>
+            
+            <tr id="allison">
+              <td>
+                <a href="https://northbynorthwestern.com/housing-2021-allison/"
+                target="_blank"
+                  >Allison Hall</a
+                >
+              </td>
+            </tr>
+
+            <tr id="chapin">
+              <td>
+                <a href="https://northbynorthwestern.com/housing-2021-chapin/"
+                target="_blank"
+                  >Chapin Hall
+                </a>
+              </td>
+            </tr>
+
+            <tr id="efc">
+              <td>
+                <a
+                  href="https://northbynorthwestern.com/housing-2021-eastfairchild/"
+                  target="_blank"
+                  >East Fairchild</a
+                >
+              </td>
+            </tr>
+
+            <tr id="plex">
+              <td>
+                <a href="https://northbynorthwestern.com/housing-2021-plex/"
+                target="_blank"
+                  >Foster-Walker Complex</a
+                >
+              </td>
+            </tr>
+
+            <tr id="hobart">
+              <td>
+                <a href="https://northbynorthwestern.com/housing-2021-hobart/"
+                target="_blank"
+                  >Hobart House
+                </a>
+              </td>
+            </tr>
+            <tr id="jones">
+              <td>
+                <a href="https://northbynorthwestern.com/housing-2021-jones/"
+                target="_blank"
+                  >Jones Hall</a
+                >
+              </td>
+            </tr>
+
+            <tr id="nmq">
+              <td>
+                <a href="https://northbynorthwestern.com/housing-2021-nmq/"
+                target="_blank"
+                  >North Mid-Quads</a
+                >
+              </td>
+            </tr>
+
+            <tr id="rogers">
+              <td>
+                <a
+                  href="https://northbynorthwestern.com/housing-2021-rogershouse/"
+                  target="_blank"
+                  >Rogers House</a
+                >
+              </td>
+            </tr>
+
+            <tr id="shepard">
+              <td>
+                <a href="https://northbynorthwestern.com/housing-2021-shepard/"
+                target="_blank"
+                  >Shepard Hall</a
+                >
+              </td>
+            </tr>
+
+            <tr id="smq">
+              <td>
+                <a href="https://northbynorthwestern.com/housing-2021-smq/"
+                target="_blank"
+                  >South Mid-Quads
+                </a>
+              </td>
+            </tr>
+
+            <tr id="wfc">
+              <td>
+                <a
+                  href="https://northbynorthwestern.com/housing-2021-westfairchild/"
+                  target="_blank"
+                  >West Fairchild</a
+                >
+              </td>
+            </tr>
+
+            <tr id="willard">
+              <td>
+                <a href="https://northbynorthwestern.com/housing-2021-willard/"
+                target="_blank"
+                  >Willard Hall
+                </a>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+        <br>
+    </div>
+
+    <!--WHAT RESIDENTS SAY-->
+
+    <div class="heading">
+      <h2>WHAT RESIDENTS SAY</h2>
+
+      <p>
+        "The room is big, it's a great location, and it's so convenient to live on top of a dining hall." - Class of 2025
+      </p>
+      <p>
+        "I have met most people at Allison outside of Allison. Lots of people come to hang out in the first floor lounge. Allison is definitely less social than other dorms. I would maybe prefer to live North Campus like in Elder just so I could get to classes at Tech faster." - Class of 2025"
+      </p>
+      <p>
+        The vibe in Allison is very chill. I like how it's clean and new. The dining hall is also very accessible. The only thing I dislike about Allison is that there's not enough lighting and ventilation." - Class of 2024
+      </p> 
+      <p>
+        "The dorm isn't too old, so it's still pretty clean. I didn't have a choice to live anywhere else. Allison is pretty good. I like how it's super close to the dining hall so you can always get food in your pajamas. However, I wish there could be better lighting." - Class of 2024
+      </p>
+      <p>
+        "It's super quiet. You don't really get to know the people in Allison. But the dorms are super nice, and the bathrooms are cool, and the dining hall is downstairs, so the amenities make up for the lack of social life. Also love having laundry on the same floor. But the dorm is quiet and probably isn't the place to make a lot of friends. I'm not sure if I would change because the dorm is really nice, but I would like to live somewhere more social." - Class of 2024
+      </p>
+      <p>
+        "I like how it's right on top of a dining hall and close to all my classes on South Campus. Even if my classes are at Bienen or Swift Hall, they are still very walkable from Allison. I wish my room could be bigger and closer to the laundry room and the elevator." - Class of 2024
+      </p>
+
+    </div>
+
+    <!--footer-->
+
+    <footer class="credits">
+      <p>
+        Adapted from past NBN Housing Guides. Information from
+        Northwestern Residential Services.
+      </p>
+      <p>Designed and developed by. Thumbail by.</p>
+    </footer>
+    
+    <!--javascript-->  
+
+    <script>
+
+      // dorms
+      const dormList = [
+    {
+      name: "560 Lincoln St.",
+      class: "lincoln",
+      lat: 42.061053,
+      long: -87.676167,
+      size: 422,
+      type: "Residence Hall",
+      location: "North",
+      dining: false,
+      AC: false,
+      suite: true,
+      singles: false,
+      doubles: true,
+      triples: false,
+      allgender: false,
+    },
+    {
+      name: "1838 Chicago Ave.",
+      class: "1838",
+      lat: 42.05110501,
+      long: -87.67816606,
+      size: 120,
+      type: "Residence Hall",
+      area: "South",
+      AC: true,
+      dining: false,
+      suite: false,
+      allgender: false,
+      singles: true,
+      doubles: true,
+      triples: false,
+    },
+    {
+      name: "2303 Sheridan Rd. (GREEN House)",
+      class: "greenhouse",
+      lat: 42.05949702,
+      long: -87.6765947,
+      size: 40,
+      type: "Residence Hall",
+      area: "Northeast",
+      AC: true,
+      dining: false,
+      suite: false,
+      allgender: false,
+      singles: true,
+      doubles: true,
+      triples: true,
+
+    },
+    {
+      name: "2349 Sheridan Rd.",
+      class: "2349",
+      lat: 42.06130671,
+      long: -87.6761558,
+      size: 90,
+      type: "Residence Hall",
+      area: "North",
+      AC: false,
+      dining: false,
+      suite: false,
+      allgender: false,
+      singles: false,
+      doubles: true,
+      triples: false,
+    },
+    {
+      name: "Allison Hall",
+      class: "allison",
+      lat: 42.05060418,
+      long: -87.6782444,
+      size: 363,
+      type: "Residence Hall",
+      area: "South",
+      AC: true,
+      dining: true,
+      suite: false,
+      allgender: true,
+      singles: true,
+      doubles: true,
+      triples: true,
+    },
+    {
+      name: "Elder Hall",
+      class: "elder",
+      lat: 42.06103289,
+      long: -87.67728019,
+      size: 345,
+      type: "Residence Hall",
+      area: "North",
+      AC: true,
+      dining: true,
+      suite: false,
+      allgender: true,
+      singles: true,
+      doubles: true,
+      triples: false,
+    },
+    {
+      name: "Bobb-McCulloch Hall",
+      class: "bobb",
+      lat: 42.05996322,
+      long: -87.67542938,
+      size: 496,
+      type: "Residence Hall",
+      area: "Northeast",
+      AC: true,
+      dining: false,
+      suite: false,
+      allgender: false,
+      singles: false,
+      doubles: true,
+      triples: true,
+    },
+    {
+      name: "Foster-Walker Complex",
+      class: "plex",
+      lat: 42.05298388,
+      long: -87.67817516,
+      size: 582,
+      type: "Residence Hall",
+      area: "Southwest",
+      AC: true,
+      dining: true,
+      suite: false,
+      allgender: true,
+      singles: true,
+      doubles: false,
+      triples: false,
+    },
+    {
+      name: "Jones Hall",
+      class: "jones",
+      lat: 42.04951668,
+      long: -87.67431117,
+      size: 121,
+      type: "Residence Hall",
+      area: "South",
+      AC: true,
+      dining: false,
+      suite: false,
+      allgender: false,
+      singles: true,
+      doubles: true,
+      triples: false,
+      singles: true,
+      doubles: true,
+      triples: false,
+    },
+    {
+      name: "Kemper Hall",
+      class: "kemper",
+      lat: 42.06117345,
+      long: -87.67423103,
+      size: 165,
+      type: "Residence Hall",
+      area: "North",
+      AC: true,
+      dining: false,
+      suite: true,
+      allgender: true,
+      singles: true,
+      doubles: true,
+      triples: false,
+    },
+    {
+      name: "Lindgren House",
+      class: "lindgren",
+      lat: 42.05968626,
+      long: -87.67619105,
+      size: 37,
+      type: "Residence Hall",
+      area: "Northeast",
+      AC: false,
+      dining: false,
+      suite: false,
+      allgender: false,
+      singles: true,
+      doubles: false,
+      triples: false,
+    },
+    {
+      name: "Rogers House",
+      class: "rogers",
+      lat: 42.05154068,
+      long: -87.67853493,
+      size: 49,
+      type: "Residence Hall",
+      area: "South",
+      AC: false,
+      dining: false,
+      suite: false,
+      allgender: false,
+      singles: true,
+      doubles: true,
+      triples: false,
+    },
+    {
+      name: "Sargent Hall",
+      class: "sargent",
+      lat: 42.0588595,
+      long: -87.67524432,
+      size: 157,
+      type: "Residence Hall",
+      area: "Northeast",
+      AC: false,
+      dining: true,
+      suite: false,
+      allgender: false,
+      singles: true,
+      doubles: true,
+      triples: false,
+    },
+    {
+      name: "Shepard Hall",
+      class: "shepard",
+      lat: 42.05108938,
+      long: -87.67829267,
+      size: 153,
+      type: "Residence Hall",
+      area: "South",
+      AC: true,
+      dining: false,
+      suite: false,
+      allgender: false,
+      singles: true,
+      doubles: true,
+      triples: false,
+    },
+    {
+      name: "Ayers Hall",
+      class: "ayers",
+      lat: 42.06055079,
+      long: -87.67463706,
+      size: 170,
+      type: "Residential College",
+      area: "Northeast",
+      AC: true,
+      dining: false,
+      suite: false,
+      allgender: false,
+      singles: true,
+      doubles: true,
+      triples: false,
+    },
+    {
+      name: "Chapin Hall ",
+      class: "chapin",
+      lat: 42.05126465,
+      long: -87.68045051,
+      size: 72,
+      type: "Residential College",
+      area: "Southwest",
+      AC: false,
+      dining: false,
+      suite: false,
+      allgender: false,
+      singles: true,
+      doubles: true,
+      triples: true,
+    },
+    {
+      name: "2303 Sheridan Rd. ",
+      class: "2303",
+      lat: 42.05949702,
+      long: -87.6765947,
+      size: 40,
+      type: "Residential College",
+      area: "Northeast",
+      AC: true,
+      dining: false,
+      suite: false,
+      allgender: false,
+      singles: true,
+      doubles: true,
+      triples: true,
+    },
+    {
+      name: "East Fairchild",
+      class: "efc",
+      lat: 42.05078145,
+      long: -87.67427763,
+      size: 109,
+      type: "Residential College",
+      area: "South",
+      AC: true,
+      dining: false,
+      suite: false,
+      allgender: false,
+    },
+    {
+      name: "Hobart House ",
+      class: "hobart",
+      lat: 42.05190354,
+      long: -87.67850153,
+      size: 50,
+      type: "Residential College",
+      area: "South",
+      AC: true,
+      dining: false,
+      suite: false,
+      allgender: false,
+      singles: true,
+      doubles: true,
+      triples: true,
+    },
+    {
+      name: "North Mid-Quads",
+      class: "nmq",
+      lat: 42.05192888,
+      long: -87.67953558,
+      size: 88,
+      type: "Residential College",
+      area: "Southwest",
+      AC: true,
+      dining: false,
+      suite: false,
+      allgender: false,
+      singles: true,
+      doubles: true,
+      triples: false,
+    },
+    {
+      name: "South Mid-Quads ",
+      class: "smq",
+      lat: 42.05150168,
+      long: -87.67895784,
+      size: 88,
+      type: "Residential College",
+      area: "Southwest",
+      AC: true,
+      dining: false,
+      suite: false,
+      allgender: false,
+      singles: true,
+      doubles: true,
+      triples: false,
+    },
+    {
+      name: "Slivka Hall",
+      class: "slivka",
+      lat: 42.06062123,
+      long: -87.67531556,
+      size: 140,
+      type: "Residential College",
+      area: "Northeast",
+      AC: true,
+      dining: false,
+      suite: true,
+      allgender: false,
+      singles: true,
+      doubles: true,
+      triples: false,
+    },
+    {
+      name: "West Fairchild",
+      class: "wfc",
+      lat: 42.05116568,
+      long: -87.67539924,
+      size: 106,
+      type: "Residential College",
+      area: "South",
+      AC: true,
+      dining: false,
+      suite: false,
+      allgender: false,
+      singles: true,
+      doubles: true,
+      triples: false,
+    },
+    {
+      name: "Willard Hall ",
+      class: "willard",
+      lat: 42.05183478,
+      long: -87.68119685,
+      size: 261,
+      type: "Residential College",
+      area: "Southwest",
+      AC: true,
+      dining: false,
+      suite: false,
+      allgender: false,
+      singles: true,
+      doubles: true,
+      triples: true,
+    },
+  ];
+
+  // map
+  var blueIcon = new L.Icon({
+    iconUrl:
+      "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png",
+    shadowUrl:
+      "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41],
+  });
+
+  var grayIcon = new L.Icon({
+    iconUrl:
+      "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-grey.png",
+    shadowUrl:
+      "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41],
+  });
+
+  var mymap = L.map("mapid").setView([42.055984, -87.675171], 15);
+
+  var marker = new L.marker([42.0544414211444, -87.68379536723893], {opacity: .001}); 
+  marker.bindTooltip("South Campus", {permanent: true, className: "my-label", offset: [0, 0] });
+  marker.addTo(mymap);
+
+   // var marker = new L.marker([42.0544414211444, -87.68379536723893])
+	// .bindLabel('A sweet static label!', { noHide: true })
+	// .addTo(map);
+
+  L.tileLayer(
+      "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
+      {
+        attribution:
+          'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: "mapbox/streets-v11",
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken:
+          "pk.eyJ1IjoibmF0aGFuaWFsdG8iLCJhIjoiY2t3OXcyemF2MmNwZzJvbXAwNTF2Njk5aSJ9.g5JkFBgSBUAFUELfSubtpg",
+      }
+    ).addTo(mymap);
+
+  var markers = {};
+
+  (function makeMarkers() {
+    for (var i in dormList) {
+      var marker = L.marker([dormList[i].lat, dormList[i].long]).setIcon(
+        grayIcon
+      );
+      marker.addTo(mymap);
+      marker.bindPopup(dormList[i].short_Name);
+      marker.on("mouseover", function (e) {
+        this.openPopup();
+        this.setIcon(blueIcon);
+      });
+      marker.on("mouseout", function (e) {
+        this.closePopup();
+        this.setIcon(grayIcon);
+      });
+
+      markers[i] = marker;
+      marker.bindPopup(`<p>${dormList[i].name} </p>`);
+    }
+  })();
+
+  // functions
+
+  const checkboxes = Object.values(document.querySelectorAll("input[type=checkbox]"));
+
+    checkboxes.forEach((checkbox) => {
+      checkbox.addEventListener("change", () =>
+        getCurrDormsByFilter(
+          Object.values(document.querySelectorAll("input[type=checkbox]"))
+            .filter((c) => c.checked)
+            .map((c) => c.id)
+        )
+      );
+    });
+
+    function getCurrDormsByFilter(filterArr) {
+      console.log(filterArr);
+      //clear classlist
+      Object.values(document.querySelectorAll("tr")).map((d, i) => {
+        if (i % 2 === 1) {
+          d.style.backgroundColor = "rgb(114, 66, 175, 25%)";
+        } else d.style.backgroundColor = "white";
+      });
+    
+      const collegeCheck = filterArr.filter((i) => i === "hall" || i === "college");
+    
+      const sizeCheck = filterArr.filter(
+        (i) => i === "small" || i === "medium" || i === "large"
+      );
+      //console.log(sizeCheck);
+    
+      const roomCheck = filterArr.filter(
+        (i) => i === "single" || i === "double" || i === "triple"
+      );
+      console.log(roomCheck);
+    
+      const filterDormsByType = (filterArr, dorm) => {
+        return collegeCheck.length === 0
+          ? true
+          : (filterArr.includes("hall") && dorm.type === "Residence Hall") ||
+              (filterArr.includes("college") && dorm.type === "Residential College");
+      };
+
+      const filterDormsBySize = (filterArr, dorm) => {
+        return sizeCheck.length === 0
+          ? true
+          :   (filterArr.includes("small") && dorm.size <= 100) || 
+              (filterArr.includes("medium") && dorm.size >= 101 && dorm.size <= 200) ||
+              (filterArr.includes("large") && dorm.size > 200);
+      };
+    
+      const filterDormsByRoom = (filterArr, dorm) => {
+        return roomCheck.length === 0
+          ? true
+          : (filterArr.includes("single") && dorm.singles == true) ||
+              (filterArr.includes("double") && dorm.doubles == true) ||
+              (filterArr.includes("triple") && dorm.triples == true);
+      };
+      
+      const filterDormsByGender = (filterArr, dorm) => {
+        return filterArr.includes("gender") ? dorm.allgender == true : true;
+      };
+
+      const filterDormsByDining = (filterArr, dorm) => {
+        return filterArr.includes("dining") ? dorm.dining == true : true;
+      };
+
+      const filterDormsByBathroom = (filterArr, dorm) => {
+        return filterArr.includes("bathroom") ? dorm.suite == true: true;
+      };
+
+      const filterDormsByAC = (filterArr, dorm) => {
+        return filterArr.includes("AC") ? dorm.AC == true: true;
+      };
+      
+      const dormsFiltered = dormList
+        .filter((dorm) => filterDormsByType(filterArr, dorm))
+        .filter((dorm) => filterDormsBySize(filterArr, dorm))
+        .filter((dorm) => filterDormsByGender(filterArr, dorm))
+        .filter((dorm) => filterDormsByDining(filterArr, dorm))
+        .filter((dorm) => filterDormsByRoom(filterArr, dorm))
+        .filter((dorm) => filterDormsByBathroom(filterArr, dorm))
+        .filter((dorm) => filterDormsByAC(filterArr, dorm))
+        .map((d) => d.class);
+    
+      const dormSelection = Object.values(document.querySelectorAll("tr")).filter(
+        (d) => dormsFiltered.includes(d.id)
+      );
+      
+      console.log(`dormSelection:${dormSelection}`)
+      for (let i = 0; i < dormSelection.length; i++) {
+        dormSelection[i].style.backgroundColor = "#43e674";
+      }
+    }
+    
+    </script>
+  </body>
+</html>
