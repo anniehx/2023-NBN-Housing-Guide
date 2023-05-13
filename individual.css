@@ -86,11 +86,12 @@
 
   .wrapper{
     display: grid;
-    grid-template-columns: 30vw 18vw 18vw 20vw;
+    grid-template-columns: 35vw 20vw;
     grid-template-rows: 95vh;
     grid-template-areas: 
-      "a b c d";
-    margin-left: 8vw;
+      "a b";
+    /* margin-left: 8vw; */
+    justify-content: center;
   }
 
   .map {
@@ -101,7 +102,7 @@
     grid-area: b;
     margin-left: 2vw;
   }
-
+/* 
   .table-south {
     grid-area: c;
   }
@@ -109,7 +110,7 @@
   .filter-layout {
     width: 90%;
     grid-area: d;
-  } 
+  }  */
 
 
   /* map */
