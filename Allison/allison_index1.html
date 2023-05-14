@@ -21,19 +21,15 @@
     <link rel="stylesheet" href="https://use.typekit.net/eip4pld.css">
 
     <!--imports leaflet-->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-      crossorigin=""
-    />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
 
-    <script
-      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-      crossorigin=""
-    ></script>
-
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    crossorigin=""></script>
+    <meta property="og:image" content="http://northbynorthwestern.com/content/images/2022/05/housingguidevibes-1-2.jpg" />
+    <link rel="icon" href="https://www.northbynorthwestern.com/favicon.png">
     <title>Allison Hall</title>
   </head>
   
@@ -41,7 +37,7 @@
     <nav class="navbar">
       <a
         class="homepage-link"
-        href="main_index.html"
+        href="../main_index.html"
       >
         <svg
           version="1.0"
@@ -77,48 +73,42 @@
         Rooms are known for being spacious and carpeted. It's in close proximity to the study spaces in Shepard, the 1838 gym and the sorority quad. No one actually calls it Hotel Allison, but some people say it's called that.
         Allison offers all-gender housing on the first floor that students must opt into. Students can select either singles or doubles. The community bathrooms are labeled all-gender on that floor.
       </p>
-      <br>
+    </div>
+    
+    <section class="heading"> 
+      <p style="font-weight: bold;"> Refer to <a href="https://www.northwestern.edu/living/residential-experience/housing-options/res-halls/allison.html"> the Official Allison Hall Page</a> for more information:</p>
+      <ul class="general-info">
+        <li>Specific building information</li>
+        <li>Virtual tours of different room types</li>
+        <li>Floor plans of different room types</li>
+      </ul> 
+
+      <div class="special-facts">
+        <div class="special-facts-column">
+          <h3>🏠 Special Facts</h3>
+          <ul>
+            <li>ADA Accessibility: ???</li>
+            <li>Social Scene: ???</li>
+          </ul>
+        </div>
+
+        <div class="special-facts-column">
+          <h3>💰 Room Prices</h3>
+          <ul>
+            <li>Singles : $ 13,692</li>
+            <li>Doubles : $ 12,219</li>
+            <li>Triples : $ 10,326</li>
+          </ul>
+        </div> 
+      </div>
+    </section>
+    
+    <!-- leaflet map -->
+    <div id="map">
     </div>
 
     <br>
-
-    <a href="https://www.northwestern.edu/living/residential-experience/housing-options/res-halls/allison.html"> Official Allison Hall Page</a>   
-
-    <!-- grid layout -->
-    <div class="wrapper">
-
-      <!--map image-->
-      <img class="map" src="allison_map.png" alt="Map image for Allison Hall">      
-          
-      <div class ="quick-fact">
-        <h4>🏠 General </h4>
-        <div class= "quick-fact-content">
-          <p> South Campus</p>
-          <p> Residential Hall</p>
-          <p> Size: Large (>200)</p>
-          <p> Room Types: Single, Double, Triples</p>
-        </div>
-        <hr>  
-
-        <h4>🛋️ Amenity</h4>
-        <div class="quick-fact-content">
-          <p> Air conditioning: Window AC Unit</p>
-          <p> Elevator: Yes</p>
-          <p> Bathroom: Community Style</p>
-          <p> ADA Accessibility: ???</p>
-          <P> Social Scene: ???</P>
-        </div>
-        <hr>          
-        
-        <h4>🏷️ Room Price </h4>
-        <div class="quick-fact-content">
-          <p>11,000 single/year</p>
-          <p>9,600 double/year</p>
-        </div>
-        </div>
-
-        <br>
-    </div>
+    <br>
     
     <!-- image slider -->
     <section class="splide">
@@ -177,6 +167,7 @@
 
       <br>
 
+
     <!--footer-->
     <footer class="credits">
       <p>
@@ -187,5 +178,192 @@
     </footer>
     
 
+    <!-- Javascript -->
+    <script>
+
+      // locations      
+      const LocationList = [
+    { 
+      name: "Allison",
+      walk_time: 0,
+      lat: 42.050704205875896, 
+      long: -87.67840760296549,
+      nearest: false,
+    },
+    { 
+      name: "Tech", 
+      walk_time: 13,
+      lat: 42.057949556033925, 
+      long: -87.67586667412954,
+      nearest: false,
+    },
+    {
+      name: "Norris", 
+      walk_time: 8,
+      lat: 42.05356176509232, 
+      long: -87.67268946063669,
+      nearest: false,
+    },
+    {
+      name: "SPAC", 
+      walk_time: 23,
+      lat: 42.05924164744799, 
+      long: -87.67249202653144,
+      nearest: false,
+    },
+    {
+      name: "The Arch", 
+      walk_time: 3,
+      lat: 42.051455627490036,
+      long: -87.67707512797833,
+      nearest: false,
+    },
+    {
+      name: "Downtown Evanston", 
+      walk_time: 7,
+      lat: 42.04914201061465, 
+      long: -87.68311792995172,
+      nearest: false,
+    },
+    // nearest 
+    {
+      name: "Nearest Fitness Room: 1838 Chicago", 
+      walk_time: 13,
+      lat: 42.05098367710788,
+      long:  -87.6779821084936,
+      nearest: true,
+    },
+    {
+      name: "Nearest Dining Hall & Mailroom & Package Center: Allison",
+      walk_time: 0,
+      lat: 42.050530726972305,
+      long: -87.67820907494847,
+      nearest: true,
+    }
+    // {
+    //   name: "Nearest Mailroom: Allison",
+    //   walk_time: 13,
+    //   lat: 42.0507,
+    //   long: 42.0507,
+    //   nearest: true,
+    // },
+    // {
+    //   name: "Nearest Package Center: Allison",
+    //   walk_time: 13,
+    //   lat: 42.057838,
+    //   long: -87.676140,
+    //   nearest: true,
+    // }
+  ]   
+
+
+  // map 
+  var blueIcon = new L.Icon({
+    iconUrl:
+      "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png",
+    shadowUrl:
+      "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41],
+  });
+
+  var yellowIcon = new L.Icon({
+    iconUrl:
+      "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png",
+    shadowUrl:
+      "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41],
+  });
+  
+  var redIcon = new L.Icon({
+    iconUrl:
+      "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png",
+    // iconUrl:
+    //   "Allison_images/1.png",
+    shadowUrl:
+      "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41],
+  });
+
+  var grayIcon = new L.Icon({
+    iconUrl:
+      "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-grey.png",
+    shadowUrl:
+      "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41],
+  });
+
+  var mymap = L.map("map").setView([42.055984, -87.675171], 15);
+
+  L.tileLayer(
+      "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
+      {
+        attribution:
+          'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: "mapbox/streets-v11",
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken:
+          "pk.eyJ1IjoibmF0aGFuaWFsdG8iLCJhIjoiY2t3OXcyemF2MmNwZzJvbXAwNTF2Njk5aSJ9.g5JkFBgSBUAFUELfSubtpg",
+      }
+    ).addTo(mymap);
+
+  var markers = {};
+
+  (function makeMarkers_location() {
+    for (var i in LocationList) {
+      if (LocationList[i].name == "Allison"){
+        var marker = L.marker([LocationList[i].lat, LocationList[i].long]).setIcon(
+        redIcon);
+        marker.addTo(mymap);
+      }else if (LocationList[i].nearest){
+        var marker = L.marker([LocationList[i].lat, LocationList[i].long]).setIcon(
+        yellowIcon);
+        marker.addTo(mymap);
+
+        marker.bindPopup(LocationList[i].short_Name);
+        marker.on("mouseover", function (e) {
+          this.openPopup();
+          this.setIcon(blueIcon);
+        });
+        marker.on("mouseout", function (e) {
+          this.closePopup();
+          this.setIcon(yellowIcon);
+        });
+        markers[i] = marker;
+        marker.bindPopup(`<p>${LocationList[i].name}</p><p>Walk time: ${LocationList[i].walk_time} min </p>`);
+      }else{
+        var marker = L.marker([LocationList[i].lat, LocationList[i].long]).setIcon(
+        grayIcon);
+        marker.addTo(mymap);
+        
+        marker.bindPopup(LocationList[i].short_Name);
+        marker.on("mouseover", function (e) {
+          this.openPopup();
+          this.setIcon(blueIcon);
+        });
+        marker.on("mouseout", function (e) {
+          this.closePopup();
+          this.setIcon(grayIcon);
+        });
+        markers[i] = marker;
+        marker.bindPopup(`<p>${LocationList[i].name}</p><p>Walk time: ${LocationList[i].walk_time} min </p>`);
+      }
+    }    
+  })();
+
+    </script>
   </body>
 </html>
