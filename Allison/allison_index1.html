@@ -84,13 +84,13 @@
       </ul> 
 
       <div class="special-facts">
-        <div class="special-facts-column">
+        <!-- <div class="special-facts-column">
           <h3>🏠 Special Facts</h3>
           <ul>
             <li>ADA Accessibility: ???</li>
             <li>Social Scene: ???</li>
           </ul>
-        </div>
+        </div> -->
 
         <div class="special-facts-column">
           <h3>💰 Room Prices</h3>
@@ -100,6 +100,16 @@
             <li>Triples : $ 10,326</li>
           </ul>
         </div> 
+
+        <div class="special-facts-column">
+          <h3>🛋️ Amenity</h3>
+            <ul>
+              <li> Air conditioning: Window AC Unit</li>
+              <li> Elevator: Yes</li>
+              <li> Bathroom: Community Style</li>
+            </ul>
+        </div>
+   
       </div>
     </section>
     
@@ -189,6 +199,7 @@
       lat: 42.050704205875896, 
       long: -87.67840760296549,
       nearest: false,
+
     },
     { 
       name: "Tech", 
@@ -231,15 +242,17 @@
       walk_time: 13,
       lat: 42.05098367710788,
       long:  -87.6779821084936,
+      icon: "../map_icons/gym.png", 
       nearest: true,
     },
     {
-      name: "Nearest Dining Hall & Mailroom & Package Center: Allison",
+      name: "Nearest Dining Hall & Mailroom: Allison",
       walk_time: 0,
       lat: 42.050530726972305,
       long: -87.67820907494847,
+      icon: "../map_icons/gym.png", 
       nearest: true,
-    }
+    },
     // {
     //   name: "Nearest Mailroom: Allison",
     //   walk_time: 13,
@@ -247,13 +260,14 @@
     //   long: 42.0507,
     //   nearest: true,
     // },
-    // {
-    //   name: "Nearest Package Center: Allison",
-    //   walk_time: 13,
-    //   lat: 42.057838,
-    //   long: -87.676140,
-    //   nearest: true,
-    // }
+    {
+      name: "Nearest Package Center: Plex", // not complete
+      walk_time: 13,
+      lat: 42.057838,
+      long: -87.676140,
+      icon: "../map_icons/gym.png", 
+      nearest: true,
+    }
   ]   
 
 
@@ -282,7 +296,7 @@
   
   var redIcon = new L.Icon({
     iconUrl:
-      "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png",
+      "map_icons/../gym.png",
     // iconUrl:
     //   "Allison_images/1.png",
     shadowUrl:
@@ -296,6 +310,18 @@
   var grayIcon = new L.Icon({
     iconUrl:
       "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-grey.png",
+    shadowUrl:
+      "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41],
+  });
+
+
+  var hallIcon = new L.Icon({
+    iconUrl:
+      "https://www.eatingwell.com/thmb/m5xUzIOmhWSoXZnY-oZcO9SdArQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/article_291139_the-top-10-healthiest-foods-for-kids_-02-4b745e57928c4786a61b47d8ba920058.jpg",
     shadowUrl:
       "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
     iconSize: [25, 41],
@@ -321,6 +347,8 @@
     ).addTo(mymap);
 
   var markers = {};
+  var marker = L.marker([42.04914201061465, -87.68311792995172]).setIcon(
+    hallIcon);
 
   (function makeMarkers_location() {
     for (var i in LocationList) {
@@ -328,22 +356,29 @@
         var marker = L.marker([LocationList[i].lat, LocationList[i].long]).setIcon(
         redIcon);
         marker.addTo(mymap);
+
       }else if (LocationList[i].nearest){
+        var Icon = new L.Icon({
+          iconUrl: LocationList[i].icon,
+          iconSize: [25, 41],
+          iconAnchor: [12, 41],
+          popupAnchor: [1, -34],
+          shadowSize: [41, 41],
+        });
         var marker = L.marker([LocationList[i].lat, LocationList[i].long]).setIcon(
-        yellowIcon);
+        Icon);
         marker.addTo(mymap);
 
         marker.bindPopup(LocationList[i].short_Name);
         marker.on("mouseover", function (e) {
           this.openPopup();
-          this.setIcon(blueIcon);
         });
         marker.on("mouseout", function (e) {
           this.closePopup();
-          this.setIcon(yellowIcon);
-        });
+        }); 
         markers[i] = marker;
         marker.bindPopup(`<p>${LocationList[i].name}</p><p>Walk time: ${LocationList[i].walk_time} min </p>`);
+     
       }else{
         var marker = L.marker([LocationList[i].lat, LocationList[i].long]).setIcon(
         grayIcon);
