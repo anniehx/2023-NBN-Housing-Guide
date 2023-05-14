@@ -196,8 +196,9 @@
     { 
       name: "Allison",
       walk_time: 0,
-      lat: 42.050704205875896, 
-      long: -87.67840760296549,
+      lat: 42.05055285314181, 
+      long: -87.67842978323098,
+      icon: '../map_icons/home.png',
       nearest: false,
 
     },
@@ -246,26 +247,27 @@
       nearest: true,
     },
     {
-      name: "Nearest Dining Hall & Mailroom: Allison",
+      name: "Nearest Dining Hall: Allison",
       walk_time: 0,
       lat: 42.050530726972305,
       long: -87.67820907494847,
-      icon: "../map_icons/gym.png", 
+      icon: "../map_icons/food.png", 
       nearest: true,
     },
-    // {
-    //   name: "Nearest Mailroom: Allison",
-    //   walk_time: 13,
-    //   lat: 42.0507,
-    //   long: 42.0507,
-    //   nearest: true,
-    // },
     {
-      name: "Nearest Package Center: Plex", // not complete
-      walk_time: 13,
-      lat: 42.057838,
-      long: -87.676140,
-      icon: "../map_icons/gym.png", 
+      name: "Nearest Mailroom: Allison",
+      walk_time: 0,
+      lat: 42.050530726972305,
+      long: -85.67820907494847,
+      icon: "../map_icons/mail.png",
+      nearest: true,
+    },
+    {
+      name: "Nearest Package Center: Plex",
+      walk_time: 6,
+      lat: 42.053119298353764,
+      long: -87.6786579621711,
+      icon: "../map_icons/package.png", 
       nearest: true,
     }
   ]   
@@ -294,19 +296,6 @@
     shadowSize: [41, 41],
   });
   
-  var redIcon = new L.Icon({
-    iconUrl:
-      "map_icons/../gym.png",
-    // iconUrl:
-    //   "Allison_images/1.png",
-    shadowUrl:
-      "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-    popupAnchor: [1, -34],
-    shadowSize: [41, 41],
-  });
-
   var grayIcon = new L.Icon({
     iconUrl:
       "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-grey.png",
@@ -319,16 +308,16 @@
   });
 
 
-  var hallIcon = new L.Icon({
-    iconUrl:
-      "https://www.eatingwell.com/thmb/m5xUzIOmhWSoXZnY-oZcO9SdArQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/article_291139_the-top-10-healthiest-foods-for-kids_-02-4b745e57928c4786a61b47d8ba920058.jpg",
-    shadowUrl:
-      "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-    popupAnchor: [1, -34],
-    shadowSize: [41, 41],
-  });
+  // var hallIcon = new L.Icon({
+  //   iconUrl:
+  //   "../map_icons/home.png",
+  //   shadowUrl:
+  //     "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
+  //   iconSize: [25, 30],
+  //   iconAnchor: [12, 41],
+  //   popupAnchor: [1, -34],
+  //   shadowSize: [41, 41],
+  // });
 
   var mymap = L.map("map").setView([42.055984, -87.675171], 15);
 
@@ -347,23 +336,23 @@
     ).addTo(mymap);
 
   var markers = {};
-  var marker = L.marker([42.04914201061465, -87.68311792995172]).setIcon(
-    hallIcon);
 
   (function makeMarkers_location() {
     for (var i in LocationList) {
-      if (LocationList[i].name == "Allison"){
-        var marker = L.marker([LocationList[i].lat, LocationList[i].long]).setIcon(
-        redIcon);
-        marker.addTo(mymap);
+      // if (LocationList[i].name == "Allison"){
+      //   var marker = L.marker([LocationList[i].lat, LocationList[i].long]).setIcon(
+      //   hallIcon);
+      //   marker.addTo(mymap);
 
-      }else if (LocationList[i].nearest){
+      // }else 
+      if (LocationList[i].nearest || LocationList[i].name == "Allison"){
         var Icon = new L.Icon({
           iconUrl: LocationList[i].icon,
-          iconSize: [25, 41],
+          // shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
+          iconSize: [25, 30],
           iconAnchor: [12, 41],
           popupAnchor: [1, -34],
-          shadowSize: [41, 41],
+          // shadowSize: [41, 41],
         });
         var marker = L.marker([LocationList[i].lat, LocationList[i].long]).setIcon(
         Icon);
